@@ -61,3 +61,27 @@ I’m always open to feedback, collaboration, or discussions about smart contrac
 - **Telegram:** [@jmakwana01](https://telegram.me/jmakwana01)
 
 ---
+
+```mermaid
+classDiagram
+    class PolygonVault {
+        +userTokenBalance
+        +tokenBalance
+        +lockedTokens
+        +messageSequence
+        +handle()
+        +deposit()
+        +withdraw()
+    }
+    class QVault {
+        +constitutionData
+        +userTokenBalance
+        +pendingLocks
+        +messageSequence
+        +handle()
+        +requestLock()
+        +initiateWithdrawal()
+    }
+    PolygonVault --> QVault : Messages
+    QVault --> PolygonVault : Messages
+```
